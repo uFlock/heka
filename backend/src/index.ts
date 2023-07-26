@@ -3,7 +3,6 @@ import http from "http";
 import { app } from "./app";
 import { getServerConfig, validateEnvironment } from "./modules/environment";
 
-
 validateEnvironment();
 
 const SERVER_CONFIG = getServerConfig();
