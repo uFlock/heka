@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+    apiServer:
+        env_file:
+            - ./backend/.env.prod
+        image: "uflock/heka-backend"
+        build:
+            context: ./backend
+            dockerfile: Dockerfile
+            target: production
+        ports:
+            - "3000:3000"
+        networks:
+            - frontend
+            - backend
+networks:
+    frontend:
+    backend:

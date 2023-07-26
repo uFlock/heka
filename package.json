@@ -1,0 +1,15 @@
+{
+	"name": "heka-technical-task",
+	"version": "1.0.0",
+	"description": "Technical Task for Hekahappy.com",
+	"scripts": {
+		"dev": "npm run down-all && docker-compose -f docker-compose-dev.yml up --build",
+		"start": "npm run down-all && docker-compose -f docker-compose-prod.yml up --build",
+		"down-all": "docker-compose -f docker-compose-dev.yml down && docker-compose -f docker-compose-prod.yml down",
+		"npm-install": "cd backend && npm install"
+	},
+	"author": "Vladimir Muzichuk",
+	"license": "MIT",
+	"dependencies": {},
+	"devDependencies": {}
+}
