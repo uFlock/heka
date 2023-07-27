@@ -1,6 +1,6 @@
 version: "3.9"
 services:
-    apiServer:
+    hekaBackend:
         env_file:
             - ./backend/.env.prod
         image: "uflock/heka-backend"
@@ -13,6 +13,16 @@ services:
         networks:
             - frontend
             - backend
+    hekaFrontend:
+        image: "uflock/heka-frontend"
+        build:
+            context: ./frontend
+            dockerfile: Dockerfile
+            target: production
+        ports:
+            - "80:80"
+        networks:
+            - frontend
 networks:
     frontend:
     backend:

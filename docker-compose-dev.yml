@@ -1,6 +1,6 @@
 version: "3.9"
 services:
-    apiServer:
+    hekaBackend:
         env_file:
             - ./backend/.env.dev
         image: "uflock/heka-backend"
@@ -10,11 +10,25 @@ services:
             target: development
         volumes:
             - ./backend:/backend
+            - /backend/node_modules/ #ignores changes in node_modules for cross-platform development
         ports:
             - "3000:3000"
         networks:
             - frontend
             - backend
+    hekaFrontend:
+        image: "uflock/heka-frontend"
+        build:
+            context: ./frontend
+            dockerfile: Dockerfile
+            target: development
+        volumes:
+            - ./frontend:/frontend
+            - /frontend/node_modules/ #ignores changes in node_modules for cross-platform development
+        ports:
+            - "8080:8080"
+        networks:
+            - frontend
 networks:
     frontend:
     backend:
