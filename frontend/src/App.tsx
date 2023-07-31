@@ -6,7 +6,8 @@ import { useState } from "react";
 import SearchOmniBar, { SubmitOmniBarProps } from "./components/search-omni-bar/search-omni-bar.tsx";
 import NewsArticleComponent from "./components/news/news-article-component.tsx";
 import { NewsArticle, requestNewsArticles, RequestNewsRequestBody } from "./modules/actions/news-api-actions.ts";
-import AlertInfo from "./components/alert/alert-info.tsx";
+import Alert from "./components/alert/alert.tsx";
+import { ALERT_TYPES } from "./components/alert/alert.tsx";
 
 function App() {
 
@@ -77,7 +78,7 @@ function App() {
 				className="divider m-auto min-w-full lg:max-w-[655px] md:max-w-[655px] lg:min-w-[655px] md:min-w-[655px]"></div>
 
 			{showNoResults &&
-				<AlertInfo message={"No Results... Please try adjusting your query."}></AlertInfo>
+				<Alert message={"No Results... Please try adjusting your query."} type={ALERT_TYPES.INFO}/>
 			}
 
 			{newsArticles.length > 0 && <InfiniteScroll

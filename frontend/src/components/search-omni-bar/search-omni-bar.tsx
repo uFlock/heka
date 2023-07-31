@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 
-import AlertError from "../alert/alert-error.tsx";
+import Alert from "../alert/alert.tsx";
+import { ALERT_TYPES } from "../alert/alert.tsx";
+
 
 import SearchBar from "./search-bar.tsx";
 import DateRangePicker, { RangePickerOptionValue } from "./date-range-picker.tsx";
@@ -84,7 +86,7 @@ export default function SearchOmniBar(props: SearchOmniBarProps) {
 		/>
 
 		{formErrors.length > 0 && <div className={"m-2.5"}>
-			<AlertError message={formErrors}/>
+			<Alert message={formErrors} type={ALERT_TYPES.ERROR}/>
 		</div>}
 
 		<DateRangePicker
