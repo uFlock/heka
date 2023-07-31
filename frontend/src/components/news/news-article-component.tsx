@@ -14,8 +14,7 @@ export default function NewsArticleComponent(props: NewsArticleProps) {
 	const getArticleSource = () => article.source.Name || "Unknown Source";
 	const formatArticleDate = () => DateTime
 		.fromISO(article.publishedAt)
-		.toHTTP();
-
+		.toLocaleString(DateTime.DATETIME_FULL);
 
 	return <>
 		<div

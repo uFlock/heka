@@ -6,8 +6,7 @@ import { useState } from "react";
 import SearchOmniBar, { SubmitOmniBarProps } from "./components/search-omni-bar/search-omni-bar.tsx";
 import NewsArticleComponent from "./components/news/news-article-component.tsx";
 import { NewsArticle, requestNewsArticles, RequestNewsRequestBody } from "./modules/actions/news-api-actions.ts";
-import Alert from "./components/alert/alert.tsx";
-import { ALERT_TYPES } from "./components/alert/alert.tsx";
+import Alert, { ALERT_TYPES } from "./components/alert/alert.tsx";
 
 function App() {
 
@@ -97,7 +96,9 @@ function App() {
 				}
 			>
 				{newsArticles.map((newsArticle, index) => {
-					return <NewsArticleComponent key={index} article={newsArticle}/>;
+					return <div key={index} className={"mb-5 mt-2"}>
+						<NewsArticleComponent article={newsArticle}/>
+					</div>;
 				})}
 			</InfiniteScroll>}
 		</>
