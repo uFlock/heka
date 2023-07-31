@@ -6,16 +6,16 @@
 
 **Home take test for hekahappy.com**
 
-A simple react app with a NodeJS backend written in TypeScript and run in a dockerised environment. It allows searching for news articles based on a query and some additional date range and sort by parameters.
+A simple react app with a Node.js backend written in TypeScript and run in a dockerised environment. It allows searching for news articles based on a query and some additional date range and sort by parameters.
 
 ### ☀️ Project Features
 
 >  📐 TypeScript/Express  
 >  🐳 Dockerized Development Environment + Hot Reload  
 >  🔮 Test Driven Development (at least for backend)   
->  🔄 Continuous Integration Pipeline (CI via Github Actions)  
+>  🔄 Continuous Integration Pipeline (CI via GitHub Actions)  
 >  📱 React App [SPA] (TypeScript + Tailwind + DaisyUI + Vite + Docker + CI + nginx)  
->  💻 NodeJS Server [Express] (TypeScript + Express + Docker + CI + TDD + AJV)  
+>  💻 Node.js Server [Express] (TypeScript + Express + Docker + CI + TDD + AJV)  
 >  📚 Some Documentation
 
 ### 🚧 Project prerequisites
@@ -47,15 +47,15 @@ A simple react app with a NodeJS backend written in TypeScript and run in a dock
 2. In the root directory run `npm run npm-install` command - this will install all the dependencies for both `/backend` and `/frontend`
    projects. Alternatively you can `cd %PROJECT_NAME% && npm install` manually.
 3. Optional: Go into `/backend` directory and run `npm run test` command - this will run all the jest test suites and will
-   rerun every time the corresponding code changes so you get an instant feedback.
+   rerun every time the corresponding code changes, so you get an instant feedback.
 4. Now run `npm run dev` command at the root of the repo to spin up the development environment with hot reload on
    code changes.
 5. Appropriate tests will auto run in the GitHub Actions CI on every push to the `main` branch or on any pull requests targeting the `main` branch.
 
 ### 🌳 Environment Files Explained
 
-***Disclamer:*** *I know that commiting environmet files is a horrible practice, however, the only reason this was done in this project is
-that there is no sensitive information of any kind involved and it is mostly for the convenience of the person assessing the task.*
+***Disclaimer:*** *I know that committing environment files is a horrible practice, however, the only reason this was done in this project is
+that there is no sensitive information of any kind involved, and it is mostly for the convenience of the person assessing the task.*
 
 `/backend` has two `.env` files:
 
@@ -114,13 +114,13 @@ VITE_API_BASE_URL=http://localhost:3000
 >  * In order to conduct a search you must enter the query string into the search bar and hit `Enter` (there's no search button 🙈).
 >  * As soon as you hit `Enter` and the first set of results have appeared the `Date Range` and `Sort By` selectors turn into "search filters", 
 > so every time you click on them after that they will refine the search parameters and resubmit the request until you search for something else via the
-> search bar. The idea is that you first pick a topic and then you refine/filter out the results. Unfortunately there's nothing much to filter...
+> search bar. The idea is that you first pick a topic, and then you refine/filter out the results. Unfortunately there's nothing much to filter...
 
 > You will need to restart your dev/prod environment after changing the .env files for changes to take effect.
 
 > Because the environment was designed with cross-platform development in mind - `Windows`, `Linux` and `Mac` - you will have to restart the dev environment
 > after you have installed new `npm dependency` locally for it to take effect in the docker container. This limitation is due to some packages shipping native
-> binaries which won't work cross platform. This can all be fixed if everyone develops on Linux for Linux, but that's unlikely to happen, but a man can dream...
+> binaries which won't work cross-platform. This can all be fixed if everyone develops on Linux for Linux, but that's unlikely to happen, but a man can dream...
 
 #### 🙈 If you find any issues or if any of the above assumptions/explanations are too ambiguous and/or wrong please do not hesitate to contact me or, alternatively, please raise an issue on GitHub.
 
