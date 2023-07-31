@@ -8,6 +8,7 @@ const EXPECTED_ON_PAGE = [
 	[7, 8],
 	[9, 10],
 ];
+
 describe(`common-utils module`, () => {
 
 	it(`paginator paginates correctly - expect 5 pages with 2 items in each`, async () => {

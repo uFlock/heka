@@ -1,12 +1,12 @@
 import request from "supertest";
 
 import { app } from '../../app';
+
 import { ROOT_LEVEL_MESSAGE_PAYLOAD } from "./index";
 
 const ROOT_LEVEL_ENDPOINT = `/`;
 const ALIVE_ENDPOINT = `/alive`;
 const NON_EXISTENT_ENDPOINT = `/NON_EXISTENT_ENDPOINT`;
-
 
 describe(`misc routes`, () => {
 

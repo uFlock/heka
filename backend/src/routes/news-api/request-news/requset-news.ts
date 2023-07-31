@@ -2,10 +2,10 @@ import { Request, Response, Router } from "express";
 import { DateTime } from "luxon";
 
 import { validateBody } from "../../../middlewares";
-
-import { RequestNewsRequestBody, requestNewsRequestSchema } from "./request-news-request-schema";
 import { FAKE_TESLA_DATA } from "../../../modules/fake-data/fake-news-api-data";
 import { paginateResult } from "../../../modules/common-utils";
+
+import { RequestNewsRequestBody, requestNewsRequestSchema } from "./request-news-request-schema";
 import { NewsArticle } from "./request-news-types";
 
 const ARTICLES_PER_PAGE = 5;
@@ -26,11 +26,11 @@ async function routeHandler(req: Request<{}, {}, RequestNewsRequestBody>, res: R
 	const { startDate, endDate } = dateRange;
 
 	const resultsFilteredByDate = filterResultsByDate(FAKE_TESLA_DATA, startDate, endDate);
-	const paginatedResult = paginateResult<NewsArticle>(resultsFilteredByDate, page, ARTICLES_PER_PAGE);
+	const paginatedResults = paginateResult<NewsArticle>(resultsFilteredByDate, page, ARTICLES_PER_PAGE);
 
 	res
 		.status(200)
-		.send(paginatedResult);
+		.send(paginatedResults);
 }
 
 export function filterResultsByDate(resultsToFilter: NewsArticle[], startDate: string, endDate: string) {

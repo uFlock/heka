@@ -76,7 +76,7 @@ describe(`request news - /api/request-news route`, () => {
 			.expect(400);
 	});
 
-	it(`returns 200 when and 5 results when correct payload is supplied`, async () => {
+	it(`returns 200 and 5 results when correct payload is supplied`, async () => {
 
 		const response = await testApiCallWithPayloadExpectCode(VALID_PAYLOAD, 200);
 
@@ -101,7 +101,7 @@ describe(`request news - /api/request-news route`, () => {
 		await testApiCallWithPayloadExpectCode(createPayloadWithout("query"), 400);
 	});
 
-	it(`returns 400 wrong parameter values supplied`, async () => {
+	it(`returns 400 when wrong parameter values supplied`, async () => {
 
 		const queryOver500 = "x".repeat(501);
 
