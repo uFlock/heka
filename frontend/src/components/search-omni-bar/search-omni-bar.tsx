@@ -3,12 +3,10 @@ import { useEffect, useState } from "react";
 import Alert from "../alert/alert.tsx";
 import { ALERT_TYPES } from "../alert/alert.tsx";
 
-
 import SearchBar from "./search-bar.tsx";
 import DateRangePicker, { RangePickerOptionValue } from "./date-range-picker.tsx";
 import SortByPicker, { SORT_BY_OPTIONS } from "./sort-by-picker.tsx";
 import { DEFAULT_RANGE_PICKER_OPTIONS } from "./constants.ts";
-
 
 export type SubmitOmniBarProps = {
 	query: string,
