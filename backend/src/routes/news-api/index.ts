@@ -1,10 +1,7 @@
 import { Router } from "express";
 
-export const PLACEHOLDER_PAYLOAD = 'Here are some news comrade!';
+import { requestNews } from './request-news';
 
 export const setNewsApiRoutes = (router: Router) => {
-
-	router.get('/news-api', (req, res) => res
-		.status(200)
-		.send(PLACEHOLDER_PAYLOAD));
+	requestNews(router)
 };
