@@ -4,7 +4,7 @@
 [![BACKEND-CI](https://github.com/uFlock/heka/actions/workflows/test-backend.yml/badge.svg)](https://github.com/uFlock/heka/actions/workflows/test-backend.yml)
 [![FRONTEND-CI](https://github.com/uFlock/heka/actions/workflows/test-frontend.yml/badge.svg)](https://github.com/uFlock/heka/actions/workflows/test-frontend.yml)
 
-Home take test for hekahappy.com
+**Home take test for hekahappy.com**
 
 A simple react app with a NodeJS backend written in TypeScript and run in a dockerised environment. It allows searching for news articles based on a query and some additional date range and sort by parameters.
 
@@ -118,7 +118,7 @@ VITE_API_BASE_URL=http://localhost:3000
 
 > You will need to restart your dev/prod environment after changing the .env files for changes to take effect.
 
-> Because the environment was designed with cross-platform development in mind - `Windows`,`Linux` and `Mac` - you will have to restart the dev environment
+> Because the environment was designed with cross-platform development in mind - `Windows`, `Linux` and `Mac` - you will have to restart the dev environment
 > after you have installed new `npm dependency` locally for it to take effect in the docker container. This limitation is due to some packages shipping native
 > binaries which won't work cross platform. This can all be fixed if everyone develops on Linux for Linux, but that's unlikely to happen, but a man can dream...
 
